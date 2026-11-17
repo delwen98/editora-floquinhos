@@ -26,7 +26,7 @@
 <div class="discount">48% DE DESCONTO</div>
 <div class="price">R$ 35,90<small>Pagamento seguro pelo checkout Hotmart</small></div>
 <div class="timer" aria-live="off"><span>Tempo desta sessão</span><strong id="countdown">05:00</strong></div>
-<p class="timer-note" id="timer-note">Contagem desta sessão; o preço não muda quando o relógio chega a zero.</p>
+
 </div>
 <a class="cta" href="https://go.hotmart.com/J108528450E" target="_blank" rel="noopener">QUERO MEU GUIA AGORA</a>
 <div class="secure">A compra é finalizada no ambiente seguro da Hotmart.</div>
@@ -68,7 +68,6 @@
     <div class="popup-price">R$ 35,90</div>
     <div class="popup-discount">48% DE DESCONTO</div>
     <div class="popup-timer" id="popup-countdown">05:00</div>
-    <p class="popup-caption">Contagem desta sessão; o valor não muda ao zerar.</p>
     <a class="cta" href="https://go.hotmart.com/J108528450E" target="_blank" rel="noopener">QUERO MEU GUIA AGORA</a>
     <div class="secure">Pagamento seguro pela Hotmart</div>
   </section>
@@ -77,7 +76,6 @@
 (() => {
   let remaining = 5 * 60;
   const display = document.getElementById('countdown');
-  const note = document.getElementById('timer-note');
   const popupDisplay = document.getElementById('popup-countdown');
   const overlay = document.getElementById('offer-overlay');
   const closeButton = document.getElementById('offer-close');
@@ -104,7 +102,6 @@
     display.textContent = timeText;
     popupDisplay.textContent = timeText;
     if (remaining === 0) {
-      note.textContent = 'Contagem concluída. O preço promocional continua visível nesta página.';
       return;
     }
     remaining -= 1;
